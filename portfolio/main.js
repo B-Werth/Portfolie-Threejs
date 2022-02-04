@@ -5,7 +5,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // Setup
 
 const scene = new THREE.Scene();
-const loader = new GLTFLoader();
 
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -45,11 +44,11 @@ scene.add(pointLight, ambientLight);
 
 // Helpers
 
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
+//const lightHelper = new THREE.PointLightHelper(pointLight);
+//const gridHelper = new THREE.GridHelper(200, 50);
+//scene.add(lightHelper, gridHelper);
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+//const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -115,7 +114,7 @@ function moveCamera() {
   jeff.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
-  camera.position.x = t * -0.0002;
+  camera.position.x = t * -0.001;
   camera.rotation.y = t * -0.0002;
 }
 
